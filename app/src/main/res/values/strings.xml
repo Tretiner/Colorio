@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Colorio</string>
+    <string name="image_desc">image</string>
+    <string name="default_text">#353535</string>
+</resources>
