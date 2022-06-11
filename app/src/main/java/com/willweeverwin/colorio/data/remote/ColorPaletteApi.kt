@@ -12,7 +12,7 @@ import retrofit2.http.POST
 interface ColorPaletteApi {
 
     @GET("/list/")
-    suspend fun getAvailableOptions(): AvailableOptionsDto
+    suspend fun getAvailableModels(): AvailableOptionsDto
 
     @Headers("Content-Type: application/json")
     @POST("/api/")

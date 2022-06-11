@@ -23,7 +23,6 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private val vm: ColorPaletteViewModel by viewModels()
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,22 +39,31 @@ class MainActivity : AppCompatActivity() {
 
             btnGetPalette.setOnClickListener { vm.getPalette() }
             btnSavePalette.setOnClickListener { vm.savePalette() }
-            btnChangePaletteModel.setOnClickListener { vm.changePaletteModel("default") }
+            btnChangePaletteModel.setOnClickListener { showModelDialog() }
         }
 
         lifecycleScope.launch {
+            vm.refreshModels()
+            vm.initModelDialog(this@MainActivity)
             lifecycle.repeatOnLifecycle(Lifecycle.State.CREATED) {
                 vm.eventFlow.collectLatest { event ->
                     when (event) {
                         is UIEvent.ShowSnackbar -> showSnackbar(event.message)
                         is UIEvent.ChangePalette -> changePalette(event.colors)
-                        is UIEvent.RestockOptions -> restockOptions(event.options)
+                        is UIEvent.ChangeModel -> changeModel(event.model)
+                        is UIEvent.SetupUI -> setupUI(event.colors, event.model)
                     }
                 }
             }
         }
+    }
 
-        vm.restockOptions()
+    private fun changeModel(text: String) {
+        binding.btnChangePaletteModel.text = text
+    }
+
+    private fun showModelDialog() {
+        vm.getAlertDialog()?.show()
     }
 
 
@@ -74,13 +82,19 @@ class MainActivity : AppCompatActivity() {
         Log.d("call picker", "someday...")
     }
 
-
     private fun View.toggleColorLock(colorIndex: Int) = (this as ImageView).setImageResource(
         if (vm.toggleLock(colorIndex))
             R.drawable.ic_lock_locked
         else
             R.drawable.ic_lock_unlocked
     )
+
+
+    private fun setupUI(colors: List<RGBColor>, modelText: String) {
+        println("setup UI \n----------------------\n-\n-\n-\n-\n-\n-\n-\n-\n-")
+        changePalette(colors)
+        changeModel(modelText)
+    }
 
     private fun changePalette(colors: List<RGBColor>) {
         val colorBinds = listOf(
@@ -91,8 +105,6 @@ class MainActivity : AppCompatActivity() {
             binding.color5,
         )
 
-        System.`in`.readBytes().decodeToString()
-
         for ((i, colorBind) in colorBinds.withIndex()) {
             if (colors[i].locked) continue
             colorBind.root.setBackgroundColor(colors[i].toResColor())
@@ -101,10 +113,6 @@ class MainActivity : AppCompatActivity() {
             colorBind.colorText.setTextColor(colorRes)
             colorBind.colorLock.setColorFilter(colorRes)
         }
-    }
-
-    private fun restockOptions(options: List<String>) {
-        Log.d("restock options", "someday...")
     }
 
     private fun showSnackbar(message: String) {

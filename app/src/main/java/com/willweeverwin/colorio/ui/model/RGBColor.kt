@@ -17,6 +17,12 @@ data class RGBColor(
         b = newColor.b
     }
 
+    fun toHexString() = String.format("#%02x%02x%02x", r, g, b).uppercase()
+
+    fun toResColor() = Color.rgb(r, g, b)
+
+    fun toListOrN(): Any = if (locked) listOf(r, g, b) else "N"
+
     fun getTextColorRes(context: Context) = ContextCompat.getColor(
         context,
         if (r * 0.299 + g * 0.587 + b * 0.114 > 186)
@@ -24,12 +30,6 @@ data class RGBColor(
         else
             R.color.on_surface_light
     )
-
-    fun toHexString() = String.format("#%02x%02x%02x", r, g, b).uppercase()
-
-    fun toResColor() = Color.rgb(r, g, b)
-
-    fun toListOrN(): Any = if (locked) listOf(r, g, b) else "N"
 
     companion object {
         val DEFAULT_COLOR get() = RGBColor(53, 53, 53)
