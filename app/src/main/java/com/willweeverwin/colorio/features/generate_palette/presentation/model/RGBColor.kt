@@ -1,4 +1,4 @@
-package com.willweeverwin.colorio.ui.model
+package com.willweeverwin.colorio.features.generate_palette.presentation.model
 
 import android.content.Context
 import android.graphics.Color
@@ -17,7 +17,12 @@ data class RGBColor(
         b = newColor.b
     }
 
-    fun toHexString() = String.format("#%02x%02x%02x", r, g, b).uppercase()
+    fun toggleLock(): Boolean {
+        locked = !locked
+        return locked
+    }
+
+    fun toHexString() = "#%02X%02X%02X".format(r, g, b)
 
     fun toResColor() = Color.rgb(r, g, b)
 

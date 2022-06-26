@@ -2,4 +2,5 @@
     <string name="app_name">Colorio</string>
     <string name="image_desc">image</string>
     <string name="default_text">#353535</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -8,6 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="primary_day">#03DAC5</color>
+    <color name="primary_night">#007E79</color>
+
     <color name="background_night">#121212</color>
     <color name="surface_night">#353535</color>
 
