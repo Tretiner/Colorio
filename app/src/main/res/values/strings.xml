@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Colorio</string>
-    <string name="image_desc">image</string>
-    <string name="default_text">#353535</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name" translatable="false">Colorio</string>
+    <string name="image_desc" translatable="false">image</string>
+    <string name="default_text" translatable="false">#353535</string>
+
+    <string name="copy_success">was successfully copied</string>
 </resources>

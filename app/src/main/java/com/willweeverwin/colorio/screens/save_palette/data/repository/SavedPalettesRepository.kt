@@ -1,0 +1,3 @@
+package com.willweeverwin.colorio.screens.save_palette.data.repository
+
+interface SavedPalettesRepository

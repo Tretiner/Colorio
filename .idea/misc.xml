@@ -3,11 +3,42 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/button_selector.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/button_stroke.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/button_stroke_pressed.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/circle.xml" value="0.3075" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_api.xml" value="0.3075" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_lock_locked.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_lock_unlocked.xml" value="0.3075" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_outline_add_photo.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_outline_delete.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_outline_image.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_outline_photo.xml" value="0.3075" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_round_color_palette.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_round_data.xml" value="0.3075" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_save_round.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/ic_texture_round.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/round_background.xml" value="0.275" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/color_picker_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/dialog_palette_info.xml" value="0.22" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/fragment_color_palette.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/fragment_extract_palette.xml" value="0.25" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/fragment_generate_palette.xml" value="0.3087719298245614" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/fragment_saved_palettes.xml" value="0.25" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/item_individual_color.xml" value="0.365625" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/item_saved_palette.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/layout_individual_color.xml" value="0.3009833262077811" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/palette_color_layout.xml" value="0.3009833262077811" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.196" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.196" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.218" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/all_colors_gradient.xml" value="0.218" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/button_selector.xml" value="0.284" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/button_stroke.xml" value="0.284" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/button_stroke_pressed.xml" value="0.2625" />
+        <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/circle.xml" value="0.1695" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/ic_background.xml" value="0.196" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/ic_foreground.xml" value="0.196" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
@@ -15,16 +46,21 @@
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/ic_round_color_palette.xml" value="0.218" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/ic_round_data.xml" value="0.218" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/ic_save_round.xml" value="0.218" />
+        <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/ic_texture_round.xml" value="0.2805" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/icon_foreground.xml" value="0.196" />
+        <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/round_background.xml" value="0.2805" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/drawable/unselected_tab.xml" value="0.218" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/color_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/color_palette_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/color_picker_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/fragment_color_palette.xml" value="0.33" />
+        <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/fragment_saved_palettes.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/item_saved_palette.xml" value="0.5" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/material_alert_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/material_color_picker_layout.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/palette_color_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/palette_color_layout.xml" value="0.33" />
+        <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/layout/saved_palette_item.xml" value="0.2796875" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.218" />
         <entry key="..\:/Users/tatar/AndroidStudioProjects/Colorio/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.218" />
       </map>
