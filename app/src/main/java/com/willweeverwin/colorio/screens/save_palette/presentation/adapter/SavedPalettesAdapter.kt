@@ -35,11 +35,11 @@ class SavedPalettesAdapter(
     inner class ViewHolder(private val binding: ItemSavedPaletteBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(palette: SavedPaletteEntity) {
             binding.apply {
-                color1.setBackgroundColor(palette.colors[0].resColor)
-                color2.setBackgroundColor(palette.colors[1].resColor)
-                color3.setBackgroundColor(palette.colors[2].resColor)
-                color4.setBackgroundColor(palette.colors[3].resColor)
-                color5.setBackgroundColor(palette.colors[4].resColor)
+                color1.setBackgroundColor(palette.colors[0].resource)
+                color2.setBackgroundColor(palette.colors[1].resource)
+                color3.setBackgroundColor(palette.colors[2].resource)
+                color4.setBackgroundColor(palette.colors[3].resource)
+                color5.setBackgroundColor(palette.colors[4].resource)
 
                 tvName.text = palette.name
                 tvDesc.text = palette.desc

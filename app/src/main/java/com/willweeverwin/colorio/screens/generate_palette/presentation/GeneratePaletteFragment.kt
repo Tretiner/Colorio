@@ -125,8 +125,8 @@ class GeneratePaletteFragment : Fragment() {
             if (colors[i].locked) continue
 
             colorBind.apply {
-                root.setBackgroundColor(colors[i].resColor)
-                colorText.text = colors[i].hexString
+                root.setBackgroundColor(colors[i].resource)
+                colorText.text = colors[i].hex
 
                 val colorRes = colors[i].getTextColorRes(ctx)
                 colorText.setTextColor(colorRes)

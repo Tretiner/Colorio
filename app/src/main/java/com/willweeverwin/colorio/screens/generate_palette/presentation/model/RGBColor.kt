@@ -3,12 +3,10 @@ package com.willweeverwin.colorio.screens.generate_palette.presentation.model
 import android.content.Context
 import android.graphics.Color
 import androidx.annotation.ColorInt
-import androidx.annotation.Keep
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.component2
 import androidx.core.graphics.component3
 import androidx.core.graphics.component4
-import androidx.palette.graphics.Palette
 import com.willweeverwin.colorio.R
 
 data class RGBColor(
@@ -17,12 +15,15 @@ data class RGBColor(
     var b: Int,
     var locked: Boolean = false
 ) {
-    val hexString get() = "#%02X%02X%02X".format(r, g, b)
+    companion object {
+        val DEFAULT_COLOR get() = RGBColor(53, 53, 53)
 
-    val resColor get() = Color.rgb(r, g, b)
-    
-    @Keep
-    fun toListOrN(): Any = if (locked) listOf(r, g, b) else "N"
+        fun @receiver:ColorInt Int.toRGBColor() = RGBColor(component2(), component3(), component4())
+    }
+
+    val hex get() = "#%02X%02X%02X".format(r, g, b)
+    val list get() = listOf(r, g, b)
+    val resource @ColorInt get() = Color.rgb(r, g, b)
 
     fun changeColor(newColor: RGBColor) {
         r = newColor.r
@@ -43,12 +44,4 @@ data class RGBColor(
         else
             R.color.on_surface_light
     )
-
-    companion object {
-        val DEFAULT_COLOR get() = RGBColor(53, 53, 53)
-
-        fun Palette.Swatch.toRGBColor() = rgb.toRGBColor()
-
-        fun Int.toRGBColor() = RGBColor(component2(), component3(), component4())
-    }
 }

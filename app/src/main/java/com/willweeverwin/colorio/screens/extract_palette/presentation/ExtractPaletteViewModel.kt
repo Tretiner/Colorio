@@ -1,5 +1,3 @@
-@file:Suppress("BlockingMethodInNonBlockingContext")
-
 package com.willweeverwin.colorio.screens.extract_palette.presentation
 
 import android.content.Context
@@ -51,17 +49,17 @@ class ExtractPaletteViewModel @Inject constructor(
 
         _palette.colors = Palette.from(_img!!)
             .maximumColorCount(14)
-            .generate().swatches.filterNotNull()
-            .take(5).map { it.toRGBColor() }
+            .generate().swatches
+            .filterNotNull()
+            .take(5)
+            .map { it.rgb.toRGBColor() }
 
         _uiStateFlow.emit(_img to _palette.colors)
         _snackbarFlow.emit("success!")
     }
 
     private suspend fun decodeUriToImg(uri: Uri) = withContext(Dispatchers.IO) {
-        val bitmapOptions = BitmapFactory.Options().apply {
-            inPreferredConfig = Bitmap.Config.ARGB_8888
-        }
+        val bitmapOptions = BitmapFactory.Options()
 
         appCtx.contentResolver.openInputStream(uri).use { stream ->
             _img = BitmapFactory.decodeStream(stream, null, bitmapOptions)

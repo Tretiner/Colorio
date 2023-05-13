@@ -1,61 +1,68 @@
 package com.willweeverwin.colorio.screens.generate_palette.data.repository
 
-import com.google.gson.stream.MalformedJsonException
+import com.squareup.moshi.JsonEncodingException
 import com.willweeverwin.colorio.core.util.data.Resource
 import com.willweeverwin.colorio.screens.generate_palette.data.remote.ColorPaletteApi
-import com.willweeverwin.colorio.screens.generate_palette.data.remote.req.ColorPaletteReq
+import com.willweeverwin.colorio.screens.generate_palette.data.remote.req.ColorPaletteRequest
 import com.willweeverwin.colorio.screens.generate_palette.presentation.model.RGBColor
 import retrofit2.HttpException
 import java.io.IOException
+import java.net.ProtocolException
 
 class GeneratePaletteRepositoryImpl(
     private val api: ColorPaletteApi
 ) : GeneratePaletteRepository {
 
-    override suspend fun refreshModels(): Resource<List<String>> =
+    override suspend fun loadModels(): Resource<List<String>> =
         try {
             val newModels = api.getAvailableModels().models
             Resource.Success(data = newModels)
 
-        } catch (err: HttpException) {
-            err.printStackTrace()
+        } catch (ex: HttpException) {
+            ex.printStackTrace()
             Resource.Error(
-                cause = err,
+                cause = ex,
                 message = "Failed to refresh models"
             )
 
-        } catch (err: IOException) {
-            err.printStackTrace()
+        } catch (ex: IOException) {
+            ex.printStackTrace()
             Resource.Error(
-                cause = err,
+                cause = ex,
                 message = "Something is wrong"
             )
         }
 
 
-    override suspend fun refreshColors(reqPalette: ColorPaletteReq): Resource<List<RGBColor>> =
+    override suspend fun loadColors(reqPalette: ColorPaletteRequest): Resource<List<RGBColor>> =
         try {
             val newColors = api.getColors(reqPalette).colors
             Resource.Success(data = newColors)
 
-        } catch (err: MalformedJsonException) {
-            err.printStackTrace()
+        } catch (ex: JsonEncodingException) {
+            ex.printStackTrace()
             Resource.Error(
-                cause = err,
+                cause = ex,
                 message = "Models seems to be outdated"
             )
 
-        } catch (err: HttpException) {
-            err.printStackTrace()
+        } catch (ex: HttpException) {
+            ex.printStackTrace()
             Resource.Error(
-                cause = err,
+                cause = ex,
                 message = "Check your internet connection"
             )
 
-        } catch (err: IOException) {
-            err.printStackTrace()
+        } catch (ex: ProtocolException){
+            ex.printStackTrace()
             Resource.Error(
-                cause = err,
+                cause = ex,
+                message = "Received empty response"
+            )
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            Resource.Error(
+                cause = ex,
                 message = "Something is wrong"
             )
         }

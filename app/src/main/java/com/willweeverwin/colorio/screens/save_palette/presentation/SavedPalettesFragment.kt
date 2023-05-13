@@ -51,7 +51,6 @@ class SavedPalettesFragment : Fragment() {
             palettes.apply {
                 setHasFixedSize(true)
                 addItemDecoration(Spacer(40))
-
                 addOnScrollListener(object : RecyclerView.OnScrollListener() {
                     override fun onScrolled(recyclerView: RecyclerView, x: Int, y: Int) {
                         if (!recyclerView.canScrollVertically(1) && y > 0) {

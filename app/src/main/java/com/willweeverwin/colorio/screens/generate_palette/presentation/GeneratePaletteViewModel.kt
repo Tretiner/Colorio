@@ -5,7 +5,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.gson.stream.MalformedJsonException
+import com.squareup.moshi.JsonEncodingException
 import com.willweeverwin.colorio.R
 import com.willweeverwin.colorio.core.util.data.Resource
 import com.willweeverwin.colorio.screens.generate_palette.data.repository.GeneratePaletteRepository
@@ -57,7 +57,7 @@ class GeneratePaletteViewModel @Inject constructor(
 
 
     private fun refreshModels() = viewModelScope.launch {
-        when (val resp = rep.refreshModels()) {
+        when (val resp = rep.loadModels()) {
             is Resource.Success -> {
                 _models = resp.data!!
                 _modelsStateFlow.emit(resp.data)
@@ -67,7 +67,8 @@ class GeneratePaletteViewModel @Inject constructor(
     }
 
     fun refreshColors() = viewModelScope.launch {
-        when (val resp = rep.refreshColors(_palette.toPaletteRequest())) {
+        val paletteRequest = _palette.toPaletteRequest()
+        when (val resp = rep.loadColors(paletteRequest)) {
             is Resource.Success -> {
                 _palette.changeColors(resp.data!!)
                 // костыль
@@ -78,7 +79,7 @@ class GeneratePaletteViewModel @Inject constructor(
             }
             is Resource.Error -> {
                 // in that case models were probably outdated
-                if (resp.cause is MalformedJsonException) refreshModels()
+                if (resp.cause is JsonEncodingException) refreshModels()
 
                 _snackbarFlow.emit(resp.message ?: "Something wrong")
             }

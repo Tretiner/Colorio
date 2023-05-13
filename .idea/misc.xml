@@ -22,7 +22,7 @@
         <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/drawable/round_background.xml" value="0.275" />
         <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/color_picker_layout.xml" value="0.3009833262077811" />
-        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/dialog_palette_info.xml" value="0.22" />
+        <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/dialog_palette_info.xml" value="0.5" />
         <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/fragment_color_palette.xml" value="0.36666666666666664" />
         <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/fragment_extract_palette.xml" value="0.25" />
         <entry key="..\:/Projects/AndroidStudio/Colorio/app/src/main/res/layout/fragment_generate_palette.xml" value="0.3087719298245614" />
@@ -66,7 +66,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

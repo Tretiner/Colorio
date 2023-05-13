@@ -1,8 +1,8 @@
 package com.willweeverwin.colorio.screens.generate_palette.data.remote.dto
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class AvailableModelsDto(
-    @SerializedName("result")
+    @field:Json(name = "result")
     val models: List<String>
 )

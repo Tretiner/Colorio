@@ -38,11 +38,11 @@ class ColorPaletteInfoDialog : DialogFragment() {
         Log.d("onCreateView", "ok")
 
         _binding = DialogPaletteInfoBinding.inflate(inflater).apply {
-            resultPalette.color1.setBackgroundColor(colors[0].resColor)
-            resultPalette.color2.setBackgroundColor(colors[1].resColor)
-            resultPalette.color3.setBackgroundColor(colors[2].resColor)
-            resultPalette.color4.setBackgroundColor(colors[3].resColor)
-            resultPalette.color5.setBackgroundColor(colors[4].resColor)
+            resultPalette.color1.setBackgroundColor(colors[0].resource)
+            resultPalette.color2.setBackgroundColor(colors[1].resource)
+            resultPalette.color3.setBackgroundColor(colors[2].resource)
+            resultPalette.color4.setBackgroundColor(colors[3].resource)
+            resultPalette.color5.setBackgroundColor(colors[4].resource)
 
             etName.setText(name)
             etDesc.setText(desc)

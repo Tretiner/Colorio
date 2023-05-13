@@ -25,12 +25,12 @@ class ExtractPaletteFragment : Fragment() {
 
     private val vm: ExtractPaletteViewModel by viewModels()
 
+    private var _binding: FragmentExtractPaletteBinding? = null
+    private val binding get() = _binding!!
+
     private val launcher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
         vm.extractColors(uri ?: return@registerForActivityResult)
     }
-
-    private var _binding: FragmentExtractPaletteBinding? = null
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -77,11 +77,11 @@ class ExtractPaletteFragment : Fragment() {
 
             colors.forEachIndexed { i, color ->
                 colorBinds[i].apply {
-                    root.setBackgroundColor(color.resColor)
+                    root.setBackgroundColor(color.resource)
 
                     val colorRes = color.getTextColorRes(ctx)
                     colorText.setTextColor(colorRes)
-                    colorText.text = color.hexString
+                    colorText.text = color.hex
                 }
             }
         }
